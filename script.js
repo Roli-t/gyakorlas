@@ -30,24 +30,23 @@ function megjelenit(tomb){
     
     formbaTolt();
     Torol();
+
     console.log(Termekek);
 }
 
 function formbaTolt(){
     $(".mod").on({'click':function()
     {
-        var termek = $('#termeknev');
-        var leiras = $('#leiras');
-        var keszlet = $('#keszlet');
-        var ar= $('#ar');
         var index=$(this).attr("id");
         
-        termek.val(Termekek[index].Terméknév);
-        leiras.val(Termekek[index].Leírás);
-        keszlet.val(Termekek[index].Készlet);
-        ar.val(Termekek[index].Ár);
+        $('#termeknev').val(Termekek[index].Terméknév);
+        $('#leiras').val(Termekek[index].Leírás);
+        $('#keszlet').val(Termekek[index].Készlet);
+        $('#ar').val(Termekek[index].Ár);
         
-        
+
+       
+    
     }
 }
 
@@ -55,14 +54,25 @@ function formbaTolt(){
         
     );
     
+    
+    
 }
+
+
+    
+    
+
+
+
 
 
 function Torol(){
     $(".tor").on({'click':function()
     {
+        var index=$(this).attr("id");
         
-        $("#tablazat td").remove();
+        $("#"+index).remove();
+        
         Termekek.length=0;
         console.log(Termekek);
 
